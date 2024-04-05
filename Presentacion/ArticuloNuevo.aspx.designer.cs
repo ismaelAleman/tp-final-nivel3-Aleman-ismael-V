@@ -11,16 +11,7 @@ namespace Presentacion
 {
 
 
-    public partial class Default
+    public partial class ArticuloNuevo
     {
-
-        /// <summary>
-        /// Control btn_detalle.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_detalle;
     }
 }

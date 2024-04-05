@@ -1,0 +1,364 @@
+﻿
+/*----------------------navbar----------------------------*/
+.navbar_container {
+    background-color: teal;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1.8fr 2.5fr 1fr;
+    grid-template-rows: 40px 35px;
+    padding-top: 20px;
+    padding-left: 15px;
+    padding-right: 10px;
+    padding-bottom:12px;
+    width: 100%;
+}
+
+
+/*menu*/
+
+.menu_container a {
+    font-size: 1rem;
+    padding: 0 1rem;
+    text-decoration: none;
+    margin-top: 6px;
+    color: ghostwhite;
+}
+
+.menu_container {
+    display: flex;
+    
+    justify-content: center;
+}
+
+/*buscar rapido*/
+.buscar_container {
+    display: flex;
+    align-items: center;
+}
+
+.botonMenu {
+    height: 40px;
+}
+
+.botBusc {
+    height: 35px;
+    margin-left: 10px;
+}
+
+/*logo*/
+.logo_container {
+    display: flex;
+    align-items: center;
+}
+
+.imgLogo {
+    height: 60px;
+    padding-left: 29px;
+    margin-top: -8px;
+   
+}
+
+.textoLogo {
+    display: flex;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 35px;
+    height: 60px;
+    font-size: 24px;
+    font-family: serif;
+}
+
+.textoLogo2 {
+    display: inline;
+    font-size: 19px;
+    font-family: serif;
+}
+
+
+/*propaganda*/
+
+.propaganda_container {
+    margin-top: -5px
+}
+
+.videomp4 {
+    border-radius: 10px;
+    margin-left: 4rem;
+    height: 85px;
+    margin-top: -6px;
+}
+
+
+
+/*-----------------pag default-----------------------------*/
+.buscadorAvanzado_container{
+    background-color:chocolate;
+}
+
+.pagDefault_container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 10px;
+    margin: 20px auto;
+    width: 95%;
+   
+    padding: 10px;
+    max-width: 1500px;
+    background-color: aquamarine;
+}
+
+.listacard {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    
+}
+
+/*cards*/
+
+.card-img-top {
+    max-width: 147px;
+    max-height: 147px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.card-body {
+    padding: 0px 10px 11px 10px !important;
+}
+
+.card-title {
+    margin-bottom: 4px;
+    font-size:1rem;
+}
+
+.card-body p {
+    margin-top: 0;
+    margin-bottom: 4px;
+    height: 76px;
+    overflow: hidden;
+    font-size: 0.8rem;
+}
+
+
+/*check favorito*/
+.custom-checkbox {
+    display: inline-block;
+    position: relative;
+    padding-left: 25px; /* Espacio para el icono */
+}
+
+.custom-checkbox:hover i {
+    color: darkkhaki;
+}
+
+.custom-checkbox input[type="checkbox"] {
+    opacity: 0; /* Oculta el checkbox predeterminado */
+    position: absolute;
+    left: 0;
+}
+
+.custom-checkbox i {
+    font-size: 25px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #333; /* Color del icono */
+    transition: color 0.5s; /* Transición de color */
+}
+
+.custom-checkbox input[type="checkbox"]:checked + i::before {
+    content: "\f004"; /* Código del icono de corazón lleno (Font Awesome) */
+    font-family: "Font Awesome 5 Free"; /* Nombre de la fuente */
+    font-weight: 900;
+    color: yellow /* Cambia el color a amarillo */
+}
+
+.btn-card {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/*--------pag Nuevo Usuario------------------------------------*/
+
+.nuevoUsuario_content{
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    /*padding: 20px;*/
+    grid-column-gap:30px;
+    margin-top:20px;
+}
+
+
+.imagenPerfil {
+    margin-top:10px;
+    margin-left: 50px;
+}
+
+
+/*.sector1{
+    max-width:500px;
+}
+.sector2{
+    max-width:500px;
+}
+*/
+
+
+.sector1.sector2 {
+    max-width: 500px;
+}
+
+
+
+
+/*-----------------------@media--------------------------------------*/
+@media only screen and (max-width: 992px) {
+
+    .videomp4 {
+        display:none;
+        
+    }
+
+    .listacard {
+       
+        grid-template-columns: 1fr 1fr 1fr;
+       margin-left:35px;
+    }
+    .nuevoUsuario_content {
+        grid-template-columns: 1fr 1fr;
+        margin: 30px auto;
+    }
+
+    .sector1.sector2 {
+        max-width: 400px;
+    }
+    .textoLogo{
+        
+    }
+
+    .imgLogo {
+        padding-left: 0px;
+    }
+
+    .textoLogo2 {
+        font-size: 18px;
+    }
+
+    .navbar_container {
+        background-color: teal;
+        display: grid;
+        gap: 8px;
+        grid-template-columns: 2fr 1fr .2fr;
+        grid-template-rows: 40px 35px;
+    }
+
+
+
+
+
+}
+
+
+
+@media only screen and (max-width: 773px) {
+    .videomp4 {
+        display: none;
+    }
+
+
+    .listacard {
+        grid-template-columns: 1fr 1fr;
+        margin-left: 40px;
+    }
+
+    .nuevoUsuario_content {
+      
+        grid-template-columns: 1fr;
+        margin: 30px auto;
+       
+    }
+
+    .imagenPerfil {
+        margin-left: 130px;
+    }
+
+    .imgLogo {
+        padding-left: 0px;
+    }
+
+
+    .navbar_container {
+        background-color: teal;
+        display: grid;
+        gap: 10px;
+        grid-template-columns: 1fr 2.7fr 0.3fr;
+        grid-template-columns: 1.3fr 1.2fr 1fr;
+        grid-template-rows: 40px 35px;
+    }
+
+    .textoLogo2 {
+       
+        font-size: 16px;
+    }
+
+   
+}
+
+@media only screen and (max-width: 600px) {
+
+    .listacard {
+        grid-template-columns: 1fr;
+        margin-left: 155px;
+    }
+
+    .navbar_container {
+        background-color: teal;
+        display: grid;
+        gap: 5px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 60px;
+        padding-left: 0px;
+        justify-content: center;
+    }
+
+    .textoLogo2 {
+        
+        font-size:16px;
+        display:none;
+    }
+
+    .textoLogo {
+        display:inline;
+        font-size:19px;
+    }
+
+    .logo_container label {
+        display: inline;
+        font-size: 25px;
+    }
+
+    .h-100 {
+        height: 120% !important;
+
+        padding-left:120px;
+    }
+
+
+    .imgLogo {
+        height: 70px  ;
+    }
+
+    /*buscar rapido*/
+    .buscar_container {
+        display: flex;
+        align-items: center;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+}
