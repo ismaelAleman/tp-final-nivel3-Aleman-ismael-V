@@ -7,11 +7,12 @@ using System.Web.UI.WebControls;
 
 namespace Presentacion
 {
-    public partial class listarArticulos : System.Web.UI.Page
+    public partial class Error : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["error"] != null)
+                txtMensaje.Text = Session["error"].ToString();
         }
     }
 }

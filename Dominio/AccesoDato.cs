@@ -17,7 +17,7 @@ namespace Dominio
 
         public AccesoDato() 
         {
-            conexion= new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_DB; integrated Security= true");
+            conexion= new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_WEB_DB; integrated Security= true");
             comando= new SqlCommand();  
             
         }

@@ -4,12 +4,12 @@
     background-color: teal;
     display: grid;
     gap: 10px;
-    grid-template-columns: 1.8fr 2.5fr 1fr;
+    grid-template-columns: 0.5fr 2fr 0.5fr;
     grid-template-rows: 40px 35px;
     padding-top: 20px;
     padding-left: 15px;
     padding-right: 10px;
-    padding-bottom:12px;
+    padding-bottom: 12px;
     width: 100%;
 }
 
@@ -18,7 +18,7 @@
 
 .menu_container a {
     font-size: 1rem;
-    padding: 0 1rem;
+    padding: 0 0.35rem;
     text-decoration: none;
     margin-top: 6px;
     color: ghostwhite;
@@ -26,9 +26,10 @@
 
 .menu_container {
     display: flex;
-    
     justify-content: center;
 }
+
+
 
 /*buscar rapido*/
 .buscar_container {
@@ -55,7 +56,6 @@
     height: 60px;
     padding-left: 29px;
     margin-top: -8px;
-   
 }
 
 .textoLogo {
@@ -70,9 +70,20 @@
 }
 
 .textoLogo2 {
-    display: inline;
+    display: flex;
     font-size: 19px;
     font-family: serif;
+    justify-content: center;
+}
+
+.h-100 {
+    display:flex;
+  
+    justify-content: center;
+}
+
+.h-100 label {
+    display: none;
 }
 
 
@@ -92,17 +103,16 @@
 
 
 /*-----------------pag default-----------------------------*/
-.buscadorAvanzado_container{
-    background-color:chocolate;
+.buscadorAvanzado_container {
+    background-color: chocolate;
 }
 
 .pagDefault_container {
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr;
     gap: 10px;
     margin: 20px auto;
     width: 95%;
-   
     padding: 10px;
     max-width: 1500px;
     background-color: aquamarine;
@@ -112,7 +122,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 10px;
-    
 }
 
 /*cards*/
@@ -131,7 +140,7 @@
 
 .card-title {
     margin-bottom: 4px;
-    font-size:1rem;
+    font-size: 1rem;
 }
 
 .card-body p {
@@ -150,31 +159,31 @@
     padding-left: 25px; /* Espacio para el icono */
 }
 
-.custom-checkbox:hover i {
-    color: darkkhaki;
-}
+    .custom-checkbox:hover i {
+        color: darkkhaki;
+    }
 
-.custom-checkbox input[type="checkbox"] {
-    opacity: 0; /* Oculta el checkbox predeterminado */
-    position: absolute;
-    left: 0;
-}
+    .custom-checkbox input[type="checkbox"] {
+        opacity: 0; /* Oculta el checkbox predeterminado */
+        position: absolute;
+        left: 0;
+    }
 
-.custom-checkbox i {
-    font-size: 25px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: #333; /* Color del icono */
-    transition: color 0.5s; /* Transición de color */
-}
+    .custom-checkbox i {
+        font-size: 25px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #333; /* Color del icono */
+        transition: color 0.5s; /* Transición de color */
+    }
 
-.custom-checkbox input[type="checkbox"]:checked + i::before {
-    content: "\f004"; /* Código del icono de corazón lleno (Font Awesome) */
-    font-family: "Font Awesome 5 Free"; /* Nombre de la fuente */
-    font-weight: 900;
-    color: yellow /* Cambia el color a amarillo */
-}
+    .custom-checkbox input[type="checkbox"]:checked + i::before {
+        content: "\f004"; /* Código del icono de corazón lleno (Font Awesome) */
+        font-family: "Font Awesome 5 Free"; /* Nombre de la fuente */
+        font-weight: 900;
+        color: yellow /* Cambia el color a amarillo */
+    }
 
 .btn-card {
     display: flex;
@@ -184,18 +193,17 @@
 
 /*--------pag Nuevo Usuario------------------------------------*/
 
-.nuevoUsuario_content{
-
-    display:grid;
-    grid-template-columns:1fr 1fr;
+.nuevoUsuario_content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     /*padding: 20px;*/
-    grid-column-gap:30px;
-    margin-top:20px;
+    grid-column-gap: 30px;
+    margin-top: 20px;
 }
 
 
 .imagenPerfil {
-    margin-top:10px;
+    margin-top: 10px;
     margin-left: 50px;
 }
 
@@ -220,15 +228,14 @@
 @media only screen and (max-width: 992px) {
 
     .videomp4 {
-        display:none;
-        
+        display: none;
     }
 
     .listacard {
-       
         grid-template-columns: 1fr 1fr 1fr;
-       margin-left:35px;
+        margin-left: 35px;
     }
+
     .nuevoUsuario_content {
         grid-template-columns: 1fr 1fr;
         margin: 30px auto;
@@ -237,8 +244,8 @@
     .sector1.sector2 {
         max-width: 400px;
     }
-    .textoLogo{
-        
+
+    .textoLogo {
     }
 
     .imgLogo {
@@ -253,14 +260,10 @@
         background-color: teal;
         display: grid;
         gap: 8px;
-        grid-template-columns: 2fr 1fr .2fr;
+        /*grid-template-columns: 1.8fr 2.2fr .2fr;*/
+        grid-template-columns: 0.5fr 2fr 0.2fr;
         grid-template-rows: 40px 35px;
     }
-
-
-
-
-
 }
 
 
@@ -277,10 +280,8 @@
     }
 
     .nuevoUsuario_content {
-      
         grid-template-columns: 1fr;
         margin: 30px auto;
-       
     }
 
     .imagenPerfil {
@@ -296,24 +297,33 @@
         background-color: teal;
         display: grid;
         gap: 10px;
-        grid-template-columns: 1fr 2.7fr 0.3fr;
-        grid-template-columns: 1.3fr 1.2fr 1fr;
+        grid-template-columns: 1fr 3fr 0fr;
+        /*grid-template-columns: 1.3fr 1.2fr 1fr;*/
         grid-template-rows: 40px 35px;
     }
 
     .textoLogo2 {
-       
-        font-size: 16px;
+        font-size: 19px;
+    }
+
+    .textoLogo {
+        display: none;
     }
 
    
+    .menuContainer {
+        padding: 0 10px;
+    }
+
+    .h-100 label {
+    }
 }
 
 @media only screen and (max-width: 600px) {
 
     .listacard {
-        grid-template-columns: 1fr;
-        margin-left: 155px;
+        grid-template-columns: 1fr 1fr;
+       /* margin-left: 155px;*/
     }
 
     .navbar_container {
@@ -327,14 +337,13 @@
     }
 
     .textoLogo2 {
-        
-        font-size:16px;
-        display:none;
+        font-size: 16px;
+        display: none;
     }
 
     .textoLogo {
-        display:inline;
-        font-size:19px;
+        display: inline;
+        font-size: 19px;
     }
 
     .logo_container label {
@@ -344,13 +353,12 @@
 
     .h-100 {
         height: 120% !important;
-
-        padding-left:120px;
+        padding-left: 120px;
     }
 
 
     .imgLogo {
-        height: 70px  ;
+        height: 70px;
     }
 
     /*buscar rapido*/
@@ -360,5 +368,16 @@
         width: 80%;
         margin: 0 auto;
     }
+
+    .menuContainer {
+        
+    }
+
+    .btnMenus{
+        padding-left:10px;
+    }
+
+    
+
 
 }

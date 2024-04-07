@@ -67,20 +67,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Agregar.aspx" />
     <Content Include="ArticuloNuevo.aspx" />
     <Content Include="Contacto.aspx" />
     <Content Include="css\Style.css" />
     <Content Include="css\Style2.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Error.aspx" />
     <Content Include="Global.asax" />
     <Content Include="img\carrito1.png" />
     <Content Include="img\Presentación2.mp4" />
-    <Content Include="ListarArticulos.aspx" />
+    <Content Include="Administrar.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="UsuarioNuevo.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Agregar.aspx.cs">
+      <DependentUpon>Agregar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Agregar.aspx.designer.cs">
+      <DependentUpon>Agregar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ArticuloNuevo.aspx.cs">
       <DependentUpon>ArticuloNuevo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -102,15 +111,22 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="ListarArticulos.aspx.cs">
-      <DependentUpon>ListarArticulos.aspx</DependentUpon>
+    <Compile Include="Administrar.aspx.cs">
+      <DependentUpon>Administrar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ListarArticulos.aspx.designer.cs">
-      <DependentUpon>ListarArticulos.aspx</DependentUpon>
+    <Compile Include="Administrar.aspx.designer.cs">
+      <DependentUpon>Administrar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
