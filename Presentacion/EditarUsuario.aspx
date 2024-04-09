@@ -1,11 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="UsuarioNuevo.aspx.cs" Inherits="Presentacion.UsuarioNuevo" %>
+﻿<%@ Page Title="Perfil" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="EditarUsuario.aspx.cs" Inherits="Presentacion.UsuarioNuevo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="usuario_titulo" style="text-align: center; margin-top: 15px;">
-        <h2>NUEVO USUARIO</h2>
+        <h2>Perfil</h2>
     </div>
 
     <div class="nuevoUsuario_content">
@@ -35,9 +35,17 @@
 
             <div class="mb-3">
                 <label for="txtEmail" class="form-label">Email</label>
-                <asp:TextBox ID="txtEmail" class="form-control" runat="server" />
+                <asp:TextBox ID="txtEmail" TextMode="Email" class="form-control" runat="server" />
             </div>
-            <%-- pass --%>
+            <%-- pass actual--%>
+
+            <div class="mb-3">
+                <label for="txtPass" class="form-label">Contraseña</label>
+                <asp:TextBox ID="txtPass" class="form-control" TextMode="Password" runat="server" />
+            </div>
+
+            <%-- pass nuevo --%>
+
 
 
             <%-- Admin --%>

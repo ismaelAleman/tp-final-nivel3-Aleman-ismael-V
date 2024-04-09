@@ -12,12 +12,16 @@ namespace Presentacion
         protected void Page_Load(object sender, EventArgs e)
         {
 
+
+
+
+
         }
 
         protected void txtUrlImagen_TextChanged(object sender, EventArgs e)
         {
-            string urlImagen = txtUrlImagen.Text;
-            imgPerfil.ImageUrl = urlImagen;
+            //string urlImagen = txtUrlImagen.Text;
+            imgPerfil.ImageUrl = txtUrlImagen.Text;
         }
     }
 }

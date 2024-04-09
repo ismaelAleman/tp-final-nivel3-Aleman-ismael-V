@@ -1,19 +1,22 @@
-﻿<%@ Page Title="Agregar" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Agregar.aspx.cs" Inherits="Presentacion.Agregar" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="EditarArticulo.aspx.cs" Inherits="Presentacion.EditarArticulo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div>
-        <br />
-        <h3>Agregar Articulo</h3>
-    </div>
-
-
 
     <div class="row">
 
+        <h3 class="mt-3">Editar Articulo</h3>
+
         <div class="col-6">
+            
             <br />
+            <div class="mb-3">
+
+                <label>ID</label>
+                <asp:TextBox runat="server" ID="TxtId" CssClass="form-control" />
+            </div>
+
             <div class="mb-3">
                 <label>Codigo</label>
                 <asp:TextBox runat="server" ID="txtCodigo" CssClass="form-control" />
@@ -45,7 +48,7 @@
 
 
             <div class="mb-3">
-                <asp:Button Text="Crear" ID="btnCrear" OnClick="btnCrear_Click" CssClass="btn btn-primary" runat="server" />
+                <asp:Button Text="Guardar" ID="btnGuardar" OnClick="btnGuardar_Click" CssClass="btn btn-primary" runat="server" />
 
                 <asp:Button Text="Cancelar" OnClick="btnCancelar_Click" ID="btnCancelar" CssClass="btn  btn-danger" runat="server" />
             </div>
@@ -54,6 +57,8 @@
         <asp:ScriptManager runat="server" />
 
         <div class="col-6">
+
+
             <div class="mb-3">
                 <br />
                 <label>Descripcion</label>
@@ -62,11 +67,11 @@
 
             <asp:UpdatePanel runat="server">
                 <ContentTemplate>
-            <div class="mb-3">
-                <label>Imagen Articulo</label>
-                <asp:TextBox runat="server" ID="urlImagen" OnTextChanged="urlImagen_TextChanged" AutoPostBack="true" CssClass="form-control" />
+                    <div class="mb-3">
+                        <label>Imagen Articulo</label>
+                        <asp:TextBox runat="server" ID="urlImagen" OnTextChanged="urlImagen_TextChanged" AutoPostBack="true" CssClass="form-control" />
 
-            </div>
+                    </div>
 
                     <div class="mb-3">
                         <asp:Image ID="imgArticulo" runat="server" CssClass="img-fluid" Width="45%" />
@@ -74,7 +79,6 @@
 
                 </ContentTemplate>
             </asp:UpdatePanel>
-
 
         </div>
     </div>

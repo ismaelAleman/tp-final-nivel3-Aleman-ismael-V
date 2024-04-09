@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
@@ -13,6 +14,54 @@ namespace Negocio
     {
         AccesoDato dato = new AccesoDato();
 
+        public Articulo traerArticulo(String id)
+        {
+            try
+            {
+                                                
+                    dato.hacerConsulta("select Id, Codigo, Nombre,Descripcion,IdMarca,IdCategoria,ImagenUrl,Precio from ARTICULOS where id =@Id");
+                    dato.setearParametros("@Id", id);
+                    dato.ejecutarLectura();
+                
+
+                if(dato.Lector.Read())
+                {
+                    Articulo arti = new Articulo();
+
+                    arti.Id = (int)dato.Lector["Id"];
+                    arti.Codigo = (String)dato.Lector["Codigo"];
+                    arti.Nombre = (String)dato.Lector["Nombre"];
+                    arti.Descripcion = (String)dato.Lector["Descripcion"];
+                    arti.Precio = Convert.ToDouble(dato.Lector["Precio"]);
+                    
+                    arti.IdMarca= new Marca();
+                    arti.IdMarca.Id= (int)dato.Lector["IdMarca"];
+                
+                    arti.IdCategoria= new Categoria();
+                    arti.IdCategoria.Id = (int)dato.Lector["IdCategoria"];
+                 
+
+                    if (dato.Lector["imagenUrl"]  != null)
+                    {
+                        arti.UrlImagen = dato.Lector["ImagenUrl"].ToString();
+                    }
+
+                    return arti;
+
+                }
+
+                return null;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            finally { dato.cerrarConexion();  }
+
+        }
 
         public List<Articulo> listaArticulos()
         {

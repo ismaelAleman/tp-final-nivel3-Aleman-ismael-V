@@ -73,6 +73,7 @@
     <Content Include="css\Style.css" />
     <Content Include="css\Style2.css" />
     <Content Include="Default.aspx" />
+    <Content Include="EditarArticulo.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="Global.asax" />
     <Content Include="img\carrito1.png" />
@@ -80,7 +81,7 @@
     <Content Include="Administrar.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Registrarse.aspx" />
-    <Content Include="UsuarioNuevo.aspx" />
+    <Content Include="EditarUsuario.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -111,6 +112,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditarArticulo.aspx.cs">
+      <DependentUpon>EditarArticulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditarArticulo.aspx.designer.cs">
+      <DependentUpon>EditarArticulo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Error.aspx.cs">
       <DependentUpon>Error.aspx</DependentUpon>
@@ -151,12 +159,12 @@
     <Compile Include="Registrarse.aspx.designer.cs">
       <DependentUpon>Registrarse.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UsuarioNuevo.aspx.cs">
-      <DependentUpon>UsuarioNuevo.aspx</DependentUpon>
+    <Compile Include="EditarUsuario.aspx.cs">
+      <DependentUpon>EditarUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UsuarioNuevo.aspx.designer.cs">
-      <DependentUpon>UsuarioNuevo.aspx</DependentUpon>
+    <Compile Include="EditarUsuario.aspx.designer.cs">
+      <DependentUpon>EditarUsuario.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

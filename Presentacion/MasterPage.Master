@@ -65,6 +65,7 @@
                 <a href="Default.aspx" class="menu-link">Home</a>
                 <a href="#" class="menu-link">Favoritos</a>
                 <a href="Contacto.aspx" class="menu-link">Contacto</a>
+                <a href="EditarUsuario.aspx" class="menu-link">Perfil</a>
                 <a href="Administrar.aspx" class="menu-link">Administrar</a>
 
 

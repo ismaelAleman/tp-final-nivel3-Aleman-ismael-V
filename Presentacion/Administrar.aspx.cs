@@ -13,11 +13,30 @@ namespace Presentacion
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            ArticuloNegocio negocio = new ArticuloNegocio();    
+            try
+            {
+                ArticuloNegocio negocio = new ArticuloNegocio();
 
-            dgvArticulos.DataSource = negocio.listaArticulos();
-            dgvArticulos.DataBind();
+                dgvArticulos.DataSource = negocio.listaArticulos();
+
+                dgvArticulos.DataBind();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
+
+        protected void dgvArticulos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var Id = dgvArticulos.SelectedDataKey.Value.ToString();
+            Console.WriteLine(Id);
+
+            
+            Response.Redirect("EditarArticulo.aspx?Id="+ Id);
+        }
+
     }
 }
