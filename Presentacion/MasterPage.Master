@@ -14,6 +14,7 @@
     <link href="css/Style2.css" rel="stylesheet" type="text/css" />
     <script src="https://kit.fontawesome.com/159e18cb2b.js" crossorigin="anonymous"></script>
 
+    <script src="Js/Funciones.js"></script>
 
 </head>
 <body>

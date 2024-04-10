@@ -38,5 +38,6 @@ namespace Presentacion
             Response.Redirect("EditarArticulo.aspx?Id="+ Id);
         }
 
+     
     }
 }

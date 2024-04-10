@@ -51,6 +51,9 @@
                 <asp:Button Text="Guardar" ID="btnGuardar" OnClick="btnGuardar_Click" CssClass="btn btn-primary" runat="server" />
 
                 <asp:Button Text="Cancelar" OnClick="btnCancelar_Click" ID="btnCancelar" CssClass="btn  btn-danger" runat="server" />
+
+                <%-- btn eliminar --%>
+                <asp:Button Text="Eliminar" ID="btnEliminar" OnClick="btnEliminar_Click" OnClientClick="return confirmarEliminar();" CssClass="btn btn-secondary " runat="server" />
             </div>
         </div>
 
@@ -65,13 +68,15 @@
                 <asp:TextBox runat="server" ID="TxtDescripcion" TextMode="MultiLine" Rows="5" Style="resize: none" CssClass="form-control" />
             </div>
 
-            <asp:UpdatePanel runat="server">
-                <ContentTemplate>
+            <%-- imagen --%>
+
                     <div class="mb-3">
                         <label>Imagen Articulo</label>
                         <asp:TextBox runat="server" ID="urlImagen" OnTextChanged="urlImagen_TextChanged" AutoPostBack="true" CssClass="form-control" />
 
                     </div>
+            <asp:UpdatePanel runat="server">
+                <ContentTemplate>
 
                     <div class="mb-3">
                         <asp:Image ID="imgArticulo" runat="server" CssClass="img-fluid" Width="45%" />

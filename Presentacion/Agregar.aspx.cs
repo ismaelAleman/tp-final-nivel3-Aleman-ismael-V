@@ -45,7 +45,7 @@ namespace Presentacion
 
                 arti.Codigo= txtCodigo.Text;
                 arti.Nombre= TxtNombre.Text;
-                arti.Precio = int.Parse(TxtPrecio.Text);
+                arti.Precio = double.Parse(TxtPrecio.Text);
                 arti.Descripcion = TxtDescripcion.Text;
                 
                 arti.IdCategoria = new Categoria();

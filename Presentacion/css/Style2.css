@@ -129,9 +129,10 @@
 .card-img-top {
     max-width: 147px;
     max-height: 147px;
-    width: auto;
-    height: auto;
+    width: 147px;
+    height: 140px;
     object-fit: contain;
+    margin: 3px auto 0px auto;
 }
 
 .card-body {
@@ -224,9 +225,10 @@
 
 
 
+
+
 /*-----------------------@media--------------------------------------*/
 @media only screen and (max-width: 992px) {
-
     .videomp4 {
         display: none;
     }

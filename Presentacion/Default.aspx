@@ -8,17 +8,19 @@
     <div class="pagDefault_container">
 
         <div class="buscadorAvanzado_container">buscador </div>
-        <%--  --%>
+    
         <div class="listaProductos_container">
 
-            <%--<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3  g-2 listacard">--%>
+         
             <div class="listacard">
 
                 <% foreach (Dominio.Articulo arti in articuloList)
                     { %>
                         <div class="col">
-                            <div class="card border-3" style="width: 160px; height: 295px;">
-                                <img src="<%:arti.UrlImagen %>" class="card-img-top" alt="...">
+                            <div class="card border-3" style="width: 170px; height: 295px;">
+                               
+                                <img src="<%: string.IsNullOrEmpty(arti.UrlImagen) ? ResolveUrl("~/img/imagen_no_encontrada.jpg") :  arti.UrlImagen %>" class="card-img-top" alt="...">
+                                                   
                                 <div class="card-body">
                                     <h5 class="card-title"><%: arti.Nombre %></h5>
                                     <p class="card-text"><%: arti.Descripcion%></p>
@@ -43,9 +45,6 @@
                 <% } %>
             </div>
         </div>
-
-
-        <%--<div class="algoMas_container">algo mas </div>--%>
     </div>
 
 

@@ -68,7 +68,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Agregar.aspx" />
-    <Content Include="ArticuloNuevo.aspx" />
     <Content Include="Contacto.aspx" />
     <Content Include="css\Style.css" />
     <Content Include="css\Style2.css" />
@@ -77,8 +76,11 @@
     <Content Include="Error.aspx" />
     <Content Include="Global.asax" />
     <Content Include="img\carrito1.png" />
+    <Content Include="img\eliminar.png" />
+    <Content Include="img\imagen_no_encontrada.jpg" />
     <Content Include="img\Presentación2.mp4" />
     <Content Include="Administrar.aspx" />
+    <Content Include="Js\Funciones.js" />
     <Content Include="Login.aspx" />
     <Content Include="Registrarse.aspx" />
     <Content Include="EditarUsuario.aspx" />
@@ -91,13 +93,6 @@
     </Compile>
     <Compile Include="Agregar.aspx.designer.cs">
       <DependentUpon>Agregar.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ArticuloNuevo.aspx.cs">
-      <DependentUpon>ArticuloNuevo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ArticuloNuevo.aspx.designer.cs">
-      <DependentUpon>ArticuloNuevo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contacto.aspx.cs">
       <DependentUpon>Contacto.aspx</DependentUpon>

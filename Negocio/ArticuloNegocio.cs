@@ -129,7 +129,7 @@ namespace Negocio
                 dato.setearParametros("@nombre", arti.Nombre);
                 dato.setearParametros("@descripcion", arti.Descripcion);
                 dato.setearParametros("@precio", Convert.ToDouble(arti.Precio));
-                dato.setearParametros("@urlimagen", arti.UrlImagen);
+                dato.setearParametros("@urlimagen", (object)arti.UrlImagen ?? DBNull.Value);
                 dato.setearParametros("@idmarca", arti.IdMarca.Id);
                 dato.setearParametros("@idCategoria", arti.IdCategoria.Id);
 
@@ -183,14 +183,15 @@ namespace Negocio
 
             try
             {
-                dato.hacerConsulta("UPDATE ARTICULOS SET Codigo=@codigo, Nombre=@nombre, Descripcion=@descripcion, IdMarca=@idmarca, IdCategoria=@idcategoria, Precio=@precio, ImagenUrl=@imagen WHERE Id=@id");
+                dato.hacerConsulta("UPDATE ARTICULOS SET Codigo=@codigo, Nombre=@nombre, Descripcion=@descripcion," +
+                    " IdMarca=@idmarca, IdCategoria=@idcategoria, Precio=@precio, ImagenUrl=@imagen WHERE Id=@id");
                 dato.setearParametros("@codigo", art.Codigo);
                 dato.setearParametros("@nombre", art.Nombre);
                 dato.setearParametros("@descripcion", art.Descripcion);
                 dato.setearParametros("@idmarca", art.IdMarca.Id);
                 dato.setearParametros("@idcategoria", art.IdCategoria.Id);
                 dato.setearParametros("@precio", Convert.ToDouble(art.Precio));
-                dato.setearParametros("@imagen", art.UrlImagen);
+                dato.setearParametros("@imagen",(object)art.UrlImagen ?? DBNull.Value);
                 dato.setearParametros("@id", art.Id);
 
 
