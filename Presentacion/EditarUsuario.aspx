@@ -40,8 +40,9 @@
             <%-- pass actual--%>
 
             <div class="mb-3">
-                <label for="txtPass" class="form-label">Contraseña</label>
-                <asp:TextBox ID="txtPass" class="form-control" TextMode="Password" runat="server" />
+                <label  class="form-label">Contraseña</label>
+                <asp:TextBox ID="txtPasword" class="form-control"  runat="server" />
+                <asp:Button Text="Cambiar contraseña" ID="btnPassNueva" CssClass="btn btn-secondary" runat="server" />
             </div>
 
             <%-- pass nuevo --%>
@@ -52,6 +53,11 @@
             <div class="mb-3">
                 <label for="chkAdmin" class="form-label">Administrador</label>
                 <asp:CheckBox ID="chkAdmin" Text="Si" runat="server" CssClass="chkAdmin" />
+            </div>
+
+            <div class="mb-3">
+                <asp:Button Text="Guardar" ID="btnGuardar" CssClass="btn btn-primary " runat="server" />
+                <asp:Button Text="Cancelar" ID="btnCancelar" style= "margin-left:5px;" CssClass="btn btn-danger" runat="server" />
             </div>
 
         </div>

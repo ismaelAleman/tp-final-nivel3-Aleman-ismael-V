@@ -3,6 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+  
+       <asp:ScriptManager runat="server" />
+    
     <div>
         <br />
         <h3>Agregar Articulo</h3>
@@ -51,7 +54,7 @@
             </div>
         </div>
 
-        <asp:ScriptManager runat="server" />
+     
 
         <div class="col-6">
             <div class="mb-3">

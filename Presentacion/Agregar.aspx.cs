@@ -61,8 +61,15 @@ namespace Presentacion
                 }
 
                 negocio.agregarArticulo(arti);
-                
-                Response.Redirect("Administrar.aspx", false);
+
+               
+                // mensaje y redireccion
+
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "agregarAlerta", "alert('El artículo se agregó correctamente.'); window.location.href = 'Administrar.aspx';", true);
+
+
+                //ScriptManager.RegisterStartupScript(this, this.GetType(), "agregarAlerta", "alert('El artículo se agregó correctamente.');", true);
+                //Response.Redirect("Administrar.aspx", false);
 
 
 

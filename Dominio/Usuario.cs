@@ -14,7 +14,7 @@ namespace Dominio
         public String UrlImagenPerfil { get; set; }
         public String Email { get; set; }
         public String Pass { get; set; }
-        public Boolean Administrador { get; set; }
+        public Boolean Admin { get; set; }
         
     }
 
