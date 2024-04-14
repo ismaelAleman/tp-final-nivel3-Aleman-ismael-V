@@ -82,6 +82,7 @@
     <Content Include="Administrar.aspx" />
     <Content Include="Js\Funciones.js" />
     <Content Include="Login.aspx" />
+    <Content Include="NuevoPass.aspx" />
     <Content Include="Registrarse.aspx" />
     <Content Include="EditarUsuario.aspx" />
     <Content Include="Web.config" />
@@ -145,6 +146,13 @@
     </Compile>
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="NuevoPass.aspx.cs">
+      <DependentUpon>NuevoPass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NuevoPass.aspx.designer.cs">
+      <DependentUpon>NuevoPass.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registrarse.aspx.cs">

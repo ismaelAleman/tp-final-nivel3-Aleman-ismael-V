@@ -42,11 +42,13 @@
             <div class="mb-3">
                 <label  class="form-label">Contraseña</label>
                 <asp:TextBox ID="txtPasword" class="form-control"  runat="server" />
-                <asp:Button Text="Cambiar contraseña" ID="btnPassNueva" CssClass="btn btn-secondary" runat="server" />
+                <asp:Button Text="Cambiar contraseña" ID="btnPassNueva" CssClass="btn btn-secondary" OnClick="btnPassNueva_Click" runat="server" />
             </div>
 
             <%-- pass nuevo --%>
 
+
+            
 
 
             <%-- Admin --%>
@@ -56,8 +58,8 @@
             </div>
 
             <div class="mb-3">
-                <asp:Button Text="Guardar" ID="btnGuardar" CssClass="btn btn-primary " runat="server" />
-                <asp:Button Text="Cancelar" ID="btnCancelar" style= "margin-left:5px;" CssClass="btn btn-danger" runat="server" />
+                <asp:Button Text="Guardar" ID="btnGuardar" OnClick="btnGuardar_Click"  CssClass="btn btn-primary " runat="server" />
+                <asp:Button Text="Cancelar" ID="btnCancelar" OnClick="btnCancelar_Click" style= "margin-left:5px;" CssClass="btn btn-danger" runat="server" />
             </div>
 
         </div>
@@ -87,7 +89,7 @@
                 <asp:UpdatePanel runat="server">
                     <ContentTemplate>
 
-                        <asp:Image ImageUrl="https://static.vecteezy.com/system/resources/previews/008/101/785/non_2x/design-galery-image-thumbnail-symbol-icon-multimedia-icon-picture-icon-vector.jpg" runat="server" ID="imgPerfil" Width="250px" />
+                        <asp:Image runat="server" ID="imgPerfil" Width="250px" />
 
                     </ContentTemplate>
                 </asp:UpdatePanel>
