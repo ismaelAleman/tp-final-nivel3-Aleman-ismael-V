@@ -11,11 +11,10 @@ namespace Presentacion
 {
     public partial class UsuarioNuevo : System.Web.UI.Page
     {
-            
-        
+                
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Image img = (Image)Master.FindControl("imgPerfil");
             try
             {
                 if (!IsPostBack)
@@ -42,6 +41,7 @@ namespace Presentacion
                             // Cargar la imagen del usuario temporal
                             imgPerfil.ImageUrl = usutemp.UrlImagenPerfil;
                             txtUrlImagen.Text = usutemp.UrlImagenPerfil;
+                            img.ImageUrl= usutemp.UrlImagenPerfil;
                         }
 
                     }
@@ -77,16 +77,9 @@ namespace Presentacion
 
         protected  void txtUrlImagen_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtUrlImagen.Text))
-            {
-               imgPerfil.ImageUrl = txtUrlImagen.Text;
 
-            }
-            else
-            {
-               imgPerfil.ImageUrl = ResolveUrl("~/img/imagen_predeterminada.jpg");
-
-            }
+            imgPerfil.ImageUrl = (!string.IsNullOrEmpty(txtUrlImagen.Text)) ? imgPerfil.ImageUrl = txtUrlImagen.Text : imgPerfil.ImageUrl = ResolveUrl("~/img/imagen_predeterminada.jpg");
+            
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
@@ -106,21 +99,11 @@ namespace Presentacion
                 usu.Apellido = txtApellido.Text;
                 usu.Email = txtEmail.Text;
          
-                //validar la direccion de la url si funciona o no y variantes
+                //validar la url 
 
-                if (!string.IsNullOrEmpty(txtUrlImagen.Text))
-                {
-                    
-                        usu.UrlImagenPerfil = txtUrlImagen.Text;
-                    
-                    
-                }
-                else 
-                {
-                        usu.UrlImagenPerfil = ((Usuario)Session["usuarioActivo"]).UrlImagenPerfil;
+                usu.UrlImagenPerfil= (!string.IsNullOrEmpty(txtUrlImagen.Text))? usu.UrlImagenPerfil = txtUrlImagen.Text : usu.UrlImagenPerfil = ((Usuario)Session["usuarioActivo"]).UrlImagenPerfil;
 
-                }
-                
+                             
 
                 usu.Admin = chkAdmin.Checked;
              
@@ -176,17 +159,9 @@ namespace Presentacion
                 usuTemp.Pass = ((Usuario)Session["usuarioActivo"]).Pass;
 
 
+                usuTemp.UrlImagenPerfil= (!string.IsNullOrEmpty(txtUrlImagen.Text))? usuTemp.UrlImagenPerfil = txtUrlImagen.Text : usuTemp.UrlImagenPerfil = ((Usuario)Session["usuarioActivo"]).UrlImagenPerfil;
 
-                if (!string.IsNullOrEmpty(txtUrlImagen.Text))
-                {
-                    usuTemp.UrlImagenPerfil = txtUrlImagen.Text;
-                }
-                else
-                {
-                    // Si no se ha ingresado ninguna URL, conserva la imagen actual del usuario
-                    usuTemp.UrlImagenPerfil = ((Usuario)Session["usuarioActivo"]).UrlImagenPerfil;
-                }
-
+                
                 usuTemp.Admin = checked(usuTemp.Admin);
 
                 Session.Add("usutemporal", usuTemp);

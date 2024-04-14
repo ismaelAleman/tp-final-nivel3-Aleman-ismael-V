@@ -17,6 +17,12 @@ namespace Presentacion
             {
                 if (!IsPostBack)
                 {
+                    if (Session["usuarioActivo"] != null)
+                    {
+                        imgPerfil.ImageUrl = ((Usuario)Session["usuarioActivo"]).UrlImagenPerfil;
+
+                    }
+                    
                     visibilidadActivo(false);
                 }
 
