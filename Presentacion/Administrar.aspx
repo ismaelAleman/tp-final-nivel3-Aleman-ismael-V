@@ -50,7 +50,7 @@
     <asp:UpdatePanel runat="server">
         <ContentTemplate>
 
-            <asp:GridView runat="server" ID="dgvArticulos" AutoGenerateColumns="false" CssClass="table"
+            <asp:GridView runat="server" ID="dgvArticulos" AutoGenerateColumns="false" CssClass="table "
                 OnSelectedIndexChanged="dgvArticulos_SelectedIndexChanged" DataKeyNames="Id" OnLoad="dgvArticulos_Load">
 
                 <Columns>
@@ -70,6 +70,7 @@
 
 
 
+    <asp:Button Text="agregar" OnClick="btnAgregar_Click" ID="btnAgregar" class=" btn btn-primary" runat="server" />
+   <%-- <a href="Agregar.aspx" class=" btn btn-primary">Agregar</a>--%>
 
-    <a href="Agregar.aspx" class=" btn btn-primary">Agregar</a>
 </asp:Content>

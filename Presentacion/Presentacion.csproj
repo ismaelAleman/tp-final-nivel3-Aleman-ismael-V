@@ -68,14 +68,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Agregar.aspx" />
+    <Content Include="Agregar2.aspx" />
     <Content Include="Contacto.aspx" />
     <Content Include="css\Style.css" />
     <Content Include="css\Style2.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Descripcion.aspx" />
     <Content Include="EditarArticulo.aspx" />
+    <Content Include="EditarElementos.aspx" />
     <Content Include="Error.aspx" />
+    <Content Include="Favorito.aspx" />
     <Content Include="Global.asax" />
     <Content Include="img\carrito1.png" />
+    <Content Include="img\corazon.png" />
     <Content Include="img\eliminar.png" />
     <Content Include="img\imagen_no_encontrada.jpg" />
     <Content Include="img\Presentación2.mp4" />
@@ -95,6 +100,13 @@
     <Compile Include="Agregar.aspx.designer.cs">
       <DependentUpon>Agregar.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Agregar2.aspx.cs">
+      <DependentUpon>Agregar2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Agregar2.aspx.designer.cs">
+      <DependentUpon>Agregar2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contacto.aspx.cs">
       <DependentUpon>Contacto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -109,6 +121,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Descripcion.aspx.cs">
+      <DependentUpon>Descripcion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Descripcion.aspx.designer.cs">
+      <DependentUpon>Descripcion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EditarArticulo.aspx.cs">
       <DependentUpon>EditarArticulo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -116,12 +135,26 @@
     <Compile Include="EditarArticulo.aspx.designer.cs">
       <DependentUpon>EditarArticulo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EditarElementos.aspx.cs">
+      <DependentUpon>EditarElementos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditarElementos.aspx.designer.cs">
+      <DependentUpon>EditarElementos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Error.aspx.cs">
       <DependentUpon>Error.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Error.aspx.designer.cs">
       <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Favorito.aspx.cs">
+      <DependentUpon>Favorito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Favorito.aspx.designer.cs">
+      <DependentUpon>Favorito.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

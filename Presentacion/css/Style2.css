@@ -132,7 +132,7 @@
     width: 147px;
     height: 140px;
     object-fit: contain;
-    margin: 3px auto 0px auto;
+    margin: 4px auto 0px auto;
 }
 
 .card-body {
@@ -154,15 +154,19 @@
 
 
 /*check favorito*/
+
+
 .custom-checkbox {
     display: inline-block;
     position: relative;
     padding-left: 25px; /* Espacio para el icono */
 }
 
-    .custom-checkbox:hover i {
-        color: darkkhaki;
-    }
+
+
+.custom-checkbox:hover i {
+    color: darkkhaki;
+}
 
     .custom-checkbox input[type="checkbox"] {
         opacity: 0; /* Oculta el checkbox predeterminado */
@@ -190,6 +194,7 @@
     display: flex;
     justify-content: space-between;
 }
+
 
 
 /*--------pag Nuevo Usuario------------------------------------*/
@@ -319,6 +324,14 @@
 
     .h-100 label {
     }
+
+
+
+
+   
+
+
+
 }
 
 @media only screen and (max-width: 600px) {

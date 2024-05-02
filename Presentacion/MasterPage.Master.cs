@@ -18,8 +18,17 @@ namespace Presentacion
                 if (!IsPostBack)
                 {
                     if (Session["usuarioActivo"] != null)
+
                     {
-                        imgPerfil.ImageUrl = ((Usuario)Session["usuarioActivo"]).UrlImagenPerfil;
+                        if(((Usuario)Session["usuarioActivo"]).UrlImagenPerfil != null)
+                        {
+                            imgPerfil.ImageUrl = ((Usuario)Session["usuarioActivo"]).UrlImagenPerfil;
+
+                        }
+                        else
+                        {
+                            imgPerfil.ImageUrl="https://media.istockphoto.com/id/1300845620/es/vector/icono-de-usuario-plano-aislado-sobre-fondo-blanco-s%C3%ADmbolo-de-usuario-ilustraci%C3%B3n-vectorial.jpg?s=612x612&w=0&k=20&c=grBa1KTwfoWBOqu1n0ewyRXQnx59bNHtHjvbsFc82gk=";
+                        }
 
                     }
                     

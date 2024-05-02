@@ -94,20 +94,47 @@ namespace Negocio
         {
             try
             {
-                dato.hacerConsulta(" update Marcas set Descripcion = @Descripcion where id= @id");
-                dato.setearParametros("@Descripcion",marca.Descripcion) ;
-                dato.setearParametros("id ", marca.Id);
+                dato.hacerConsulta("update MARCAS set Descripcion = @Descripcion where Id =@id");
+                dato.setearParametros("@Descripcion",marca.Descripcion);
+                dato.setearParametros("@id", marca.Id);
                 dato.ejecutarAccion();
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
             finally { dato.cerrarConexion() ; }
         }
 
+        public Marca traerMarca(string id)
+        {
+            try
+            {
+                Marca marca = new Marca();
+                
+                dato.hacerConsulta("select id, Descripcion from Marcas where id = @Ids ");
+                dato.setearParametros("@Ids", id);
+                dato.ejecutarLectura();
 
+                if(dato.Lector.Read())
+                {
+                    
+                    marca.Id = (int)dato.Lector["Id"];
+                    marca.Descripcion = (String)dato.Lector["Descripcion"];
+
+                }
+
+                    return marca;
+              
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { dato.cerrarConexion(); }
+        }
     }
 }

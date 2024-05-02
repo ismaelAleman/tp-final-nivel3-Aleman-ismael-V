@@ -42,10 +42,11 @@
             <div class="mb-3">
                 <label  class="form-label">Contraseña</label>
                 <asp:TextBox ID="txtPasword" class="form-control"  runat="server" />
+               
+            <%-- pass nuevo --%>
                 <asp:Button Text="Cambiar contraseña" ID="btnPassNueva" CssClass="btn btn-secondary" OnClick="btnPassNueva_Click" runat="server" />
             </div>
 
-            <%-- pass nuevo --%>
 
 
             
@@ -53,14 +54,18 @@
 
             <%-- Admin --%>
             <div class="mb-3">
-                <label for="chkAdmin" class="form-label">Administrador</label>
+                <asp:Label ID="lbladmin" CssClass="form-label" Text="Administrador" runat="server" />                
                 <asp:CheckBox ID="chkAdmin" Text="Si" runat="server" CssClass="chkAdmin" />
             </div>
 
             <div class="mb-3">
                 <asp:Button Text="Guardar" ID="btnGuardar" OnClick="btnGuardar_Click"  CssClass="btn btn-primary " runat="server" />
-                <asp:Button Text="Cancelar" ID="btnCancelar" OnClick="btnCancelar_Click" style= "margin-left:5px;" CssClass="btn btn-danger" runat="server" />
+                <asp:Button Text="Cancelar" ID="btnCancelar" OnClick="btnCancelar_Click" style= "margin-left:8px;" CssClass="btn btn-danger" runat="server" />
+               
+                <asp:Button Text="Eliminar Usuario"  CssClass="btn btn-secondary" ID="btnEliminar" runat="server" style= "margin-left:8px;" OnClick="btnEliminar_Click" OnClientClick="return confirmarEliminar();" />
             </div>
+
+            
 
         </div>
 

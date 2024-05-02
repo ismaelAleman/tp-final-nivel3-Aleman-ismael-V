@@ -28,6 +28,7 @@ namespace Presentacion
                 usu.Email = txtemail.Text;
                 usu.Pass = txtpass.Text;
 
+
                 if ((usu=usunegocio.login(usu)) != null)
                 {
                    Session.Add("usuarioActivo", usu);

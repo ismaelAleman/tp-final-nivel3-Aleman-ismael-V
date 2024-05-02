@@ -108,5 +108,31 @@ namespace Negocio
             }
         }
 
+        public Categoria traerCategoria(string id)
+        {
+            try
+            {
+                dato.hacerConsulta("select Id, Descripcion from Categorias where id = @Id");
+                dato.setearParametros("@Id", id);
+                dato.ejecutarLectura();
+
+                Categoria aux = new Categoria();
+                if (dato.Lector.Read())
+                {                
+                    aux.Id = (int)dato.Lector["Id"];
+                    aux.Descripcion = (String)dato.Lector["Descripcion"];
+                                  
+                }
+                    return aux;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { dato.cerrarConexion();}
+        }
+
     }
 }

@@ -11,7 +11,7 @@ namespace Presentacion
 {
     public partial class UsuarioNuevo : System.Web.UI.Page
     {
-                
+
         protected void Page_Load(object sender, EventArgs e)
         {
             Image img = (Image)Master.FindControl("imgPerfil");
@@ -28,8 +28,10 @@ namespace Presentacion
                         txtNombre.Text = usutemp.Nombre;
                         txtApellido.Text = usutemp.Apellido;
                         chkAdmin.Checked = usutemp.Admin;
+                        chkAdmin.Visible = false;
                         txtPasword.Text = "************";
-                        
+                        txtPasword.ReadOnly = true;
+
                         // Verificar si es null
                         if (string.IsNullOrEmpty(usutemp.UrlImagenPerfil))
                         {
@@ -41,28 +43,63 @@ namespace Presentacion
                             // Cargar la imagen del usuario temporal
                             imgPerfil.ImageUrl = usutemp.UrlImagenPerfil;
                             txtUrlImagen.Text = usutemp.UrlImagenPerfil;
-                            img.ImageUrl= usutemp.UrlImagenPerfil;
+                            img.ImageUrl = usutemp.UrlImagenPerfil;
                         }
 
                     }
                     else
                         if (Session["usuarioActivo"] != null)
                     {
-                        Usuario usu = (Usuario)Session["usuarioActivo"];
 
-                        txtId.Text = usu.Id.ToString();
-                        txtId.ReadOnly = true;
-                        txtEmail.Text = usu.Email.ToString();
-                        txtEmail.ReadOnly = true;
-                        txtPasword.Text = "************";
-                        txtNombre.Text = usu.Nombre.ToString();
-                        txtApellido.Text = usu.Apellido.ToString();
-                        chkAdmin.Checked=usu.Admin;
+                        if (Request.QueryString["Id"] != null && ((Usuario)Session["usuarioActivo"]).Admin)
+                        {
+                            UsuarioNegocio negousu = new UsuarioNegocio();
+                            Usuario usu1 = negousu.traerUsuario(int.Parse(Request.QueryString["Id"]));
 
-                        imgPerfil.ImageUrl= !string.IsNullOrEmpty(usu.UrlImagenPerfil) ? usu.UrlImagenPerfil.ToString() :  ResolveUrl("~/img/imagen_no_encontrada.jpg");
+                            txtId.Text = usu1.Id.ToString();
+                            txtId.ReadOnly = true;
+
+                            txtEmail.Text = usu1.Email.ToString();
+                            txtEmail.ReadOnly = true;
+
+                            txtPasword.Text = "************";
+                            btnPassNueva.Visible = false;
+                            txtPasword.ReadOnly = true;
+
+                            txtNombre.Text = usu1.Nombre;
+                            txtNombre.ReadOnly = true;
+
+                            txtApellido.Text = usu1.Apellido;
+                            txtApellido.ReadOnly = true;
+                            lbladmin.Text = "administrador";
+                            chkAdmin.Checked = usu1.Admin;
+
+                            txtUrlImagen.ReadOnly = true;
+
+                        }
+                        else
+                        {
+                            Usuario usu = (Usuario)Session["usuarioActivo"];
+
+                            txtId.Text = usu.Id.ToString();
+                            txtId.ReadOnly = true;
+                            txtEmail.Text = usu.Email.ToString();
+                            txtEmail.ReadOnly = true;
+                            txtPasword.Text = "************";
+                            txtPasword.ReadOnly = true;
+                            txtNombre.Text = usu.Nombre.ToString();
+                            txtApellido.Text = usu.Apellido.ToString();
+                            lbladmin.Text = " ";                          
+                            chkAdmin.Checked = usu.Admin;
+
+                            chkAdmin.Visible = false;
+                            btnEliminar.Visible = false;
+
+                            imgPerfil.ImageUrl = !string.IsNullOrEmpty(usu.UrlImagenPerfil) ? usu.UrlImagenPerfil.ToString() : ResolveUrl("~/img/imagen_no_encontrada.jpg");
+
+                        }
 
                     }
-
                 }
 
             }
@@ -73,23 +110,23 @@ namespace Presentacion
             }
 
         }
-        
 
-        protected  void txtUrlImagen_TextChanged(object sender, EventArgs e)
+
+        protected void txtUrlImagen_TextChanged(object sender, EventArgs e)
         {
 
             imgPerfil.ImageUrl = (!string.IsNullOrEmpty(txtUrlImagen.Text)) ? imgPerfil.ImageUrl = txtUrlImagen.Text : imgPerfil.ImageUrl = ResolveUrl("~/img/imagen_predeterminada.jpg");
-            
+
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Default.aspx", false);
+            Response.Redirect("Administrar.aspx", false);
         }
 
-        protected  void btnGuardar_Click(object sender, EventArgs e)
+        UsuarioNegocio usuNego = new UsuarioNegocio();
+        protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            UsuarioNegocio usuNego = new UsuarioNegocio();
 
             try
             {
@@ -98,35 +135,36 @@ namespace Presentacion
                 usu.Nombre = txtNombre.Text;
                 usu.Apellido = txtApellido.Text;
                 usu.Email = txtEmail.Text;
-         
+
                 //validar la url 
 
-                usu.UrlImagenPerfil= (!string.IsNullOrEmpty(txtUrlImagen.Text))? usu.UrlImagenPerfil = txtUrlImagen.Text : usu.UrlImagenPerfil = ((Usuario)Session["usuarioActivo"]).UrlImagenPerfil;
+                usu.UrlImagenPerfil = (!string.IsNullOrEmpty(txtUrlImagen.Text)) ? usu.UrlImagenPerfil = txtUrlImagen.Text : usu.UrlImagenPerfil = ((Usuario)Session["usuarioActivo"]).UrlImagenPerfil;
 
-                             
+
 
                 usu.Admin = chkAdmin.Checked;
-             
+
                 if (Session["temporalpass"] as string != null)
                 {
                     usu.Pass = Session["temporalpass"] as string;
                 }
-                else if (Session["usutemporal"] !=null)
+                else if (Session["usutemporal"] != null)
                 {
                     usu.Pass = ((Usuario)Session["usutemporal"]).Pass;
-                }else
+                }
+                else
                 {
                     usu.Pass = ((Usuario)Session["usuarioActivo"]).Pass;
                 }
 
                 //guardamos modificacion en la bd
                 usuNego.modificarUsuario(usu);
-                
+
                 // actualiza usuarioActivo
                 Session["usuarioActivo"] = usu;
 
                 //eliminamos las sessiones temporales si es que hay alguno
-                if(Session["usutemporal"] != null)
+                if (Session["usutemporal"] != null)
                 {
                     Session.Remove("usutemporal");
                 }
@@ -159,9 +197,9 @@ namespace Presentacion
                 usuTemp.Pass = ((Usuario)Session["usuarioActivo"]).Pass;
 
 
-                usuTemp.UrlImagenPerfil= (!string.IsNullOrEmpty(txtUrlImagen.Text))? usuTemp.UrlImagenPerfil = txtUrlImagen.Text : usuTemp.UrlImagenPerfil = ((Usuario)Session["usuarioActivo"]).UrlImagenPerfil;
+                usuTemp.UrlImagenPerfil = (!string.IsNullOrEmpty(txtUrlImagen.Text)) ? usuTemp.UrlImagenPerfil = txtUrlImagen.Text : usuTemp.UrlImagenPerfil = ((Usuario)Session["usuarioActivo"]).UrlImagenPerfil;
 
-                
+
                 usuTemp.Admin = checked(usuTemp.Admin);
 
                 Session.Add("usutemporal", usuTemp);
@@ -177,6 +215,21 @@ namespace Presentacion
 
         }
 
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                usuNego.eliminarUsuario(int.Parse(txtId.Text));
+
+                Response.Redirect("Administrar.aspx", false);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 
 }

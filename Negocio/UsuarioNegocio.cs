@@ -56,7 +56,7 @@ namespace Negocio
                     usu.Pass = (String)datos.Lector["pass"];
                     usu.Nombre = (String)datos.Lector["nombre"];
                     usu.Apellido = datos.Lector.IsDBNull(datos.Lector.GetOrdinal("apellido")) ? "" : (String)datos.Lector["apellido"];
-                    usu.UrlImagenPerfil = datos.Lector.IsDBNull(datos.Lector.GetOrdinal("urlImagenPerfil")) ? "ruta_por_defecto.jpg" : (string)datos.Lector["urlImagenPerfil"];
+                    usu.UrlImagenPerfil = datos.Lector.IsDBNull(datos.Lector.GetOrdinal("urlImagenPerfil")) ? "https://media.istockphoto.com/id/1300845620/es/vector/icono-de-usuario-plano-aislado-sobre-fondo-blanco-s%C3%ADmbolo-de-usuario-ilustraci%C3%B3n-vectorial.jpg?s=612x612&w=0&k=20&c=grBa1KTwfoWBOqu1n0ewyRXQnx59bNHtHjvbsFc82gk=" : (string)datos.Lector["urlImagenPerfil"];
                     usu.Admin = (bool)datos.Lector["admin"];
 
                     return usu;
@@ -118,7 +118,7 @@ namespace Negocio
         {
             try
             {
-                datos.hacerConsulta(" deleted from Users where id = @Id");
+                datos.hacerConsulta(" delete from Users where id = @Id");
                 datos.setearParametros("@Id", id);
                 datos.ejecutarAccion();
             }

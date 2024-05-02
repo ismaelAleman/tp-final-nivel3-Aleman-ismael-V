@@ -19,8 +19,8 @@ namespace Negocio
             try
             {
                                                 
-                    dato.hacerConsulta("select Id, Codigo, Nombre,Descripcion,IdMarca,IdCategoria,ImagenUrl,Precio from ARTICULOS where id =@Id");
-                    dato.setearParametros("@Id", id);
+                    dato.hacerConsulta("select a.Id, Codigo, Nombre,a.Descripcion, m.Descripcion as descripcionMarca ,IdMarca,IdCategoria,ImagenUrl,Precio from ARTICULOS a,MARCAS m where a.Id =@id And m.Id=IdMarca");
+                    dato.setearParametros("@id", id);
                     dato.ejecutarLectura();
                 
 
@@ -36,6 +36,8 @@ namespace Negocio
                     
                     arti.IdMarca= new Marca();
                     arti.IdMarca.Id= (int)dato.Lector["IdMarca"];
+                    arti.IdMarca.Descripcion = dato.Lector["descripcionMarca"].ToString();
+                    
                 
                     arti.IdCategoria= new Categoria();
                     arti.IdCategoria.Id = (int)dato.Lector["IdCategoria"];

@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Negocio;
 using Dominio;
+using System.Web.Services;
+using System.Diagnostics;
 
 namespace Presentacion
 {
@@ -19,8 +21,17 @@ namespace Presentacion
             articuloList = negocio.listaArticulos();
 
             
+
+
         }
 
-       
+        protected void btn_detalle_Click(object sender, EventArgs e)
+        {
+
+
+            // Verificar si el valor del ID se está pasando correctamente
+
+
+        }
     }
 }
